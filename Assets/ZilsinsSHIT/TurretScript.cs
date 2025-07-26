@@ -28,7 +28,6 @@ public class TurretScript : MonoBehaviour
     [SerializeField] private float machineBulletSpeed = 8f;
     [SerializeField] private float spreadAngle = 30f;
     [SerializeField] private float spawnDuration = 2f;
-    [SerializeField] private float detectionRange = 6f;
     [SerializeField] private float fireCooldown = 3f;
 
     [Header("Field of View")]
@@ -69,12 +68,19 @@ public class TurretScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        cooldownTimer -= Time.deltaTime;
+        if (cooldownTimer <= 0) isOnCooldown = false;
+        if (currentSpawnedObj != null)
+        {
+
+            currentSpawnedObj.transform.position = firingPort.position;
+            currentSpawnedObj.transform.rotation = firingPort.rotation;
+        }
 
         if (target == null)
         {
             if (isRayActive) DisableRay();
-            cooldownTimer -= Time.deltaTime;
-            if (cooldownTimer <= 0) isOnCooldown = false;
+            
             isWindingUp = false;
             //if (isOnCooldown)
             //{
@@ -298,7 +304,7 @@ public class TurretScript : MonoBehaviour
             float currentAngle = startAngle + angleStep * i;
             Quaternion rotation = firingPort.rotation * Quaternion.Euler(0, 0, currentAngle);
             GameObject bullet = Instantiate(machineBullet, firingPort.position, rotation);
-            bullet.GetComponent<Rigidbody2D>().linearVelocity = bullet.transform.up * BBulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().linearVelocity = bullet.transform.up * machineBulletSpeed;
             Destroy(bullet, 4f);
         }
     }
