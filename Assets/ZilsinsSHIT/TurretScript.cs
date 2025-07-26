@@ -1,15 +1,26 @@
 using UnityEngine;
-using UnityEditor;
-
+using System.Collections.Generic;
 
 public class TurretScript : MonoBehaviour
 {
+    [System.Serializable]
+    public class Buff
+    {
+        public float damageMultiplier = 1f;
+        public float rangeMultiplier = 1f;
+        public float fireRateMultiplier = 1f;
+        public float duration;
+        public float endTime;
+        public GameObject specialPrefab; // For Turret D
+    }
+
     [Header("References")]
     [SerializeField] private Transform turretRotationPoint;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject machineBullet;
     [SerializeField] private GameObject flame;
+    [SerializeField] private GameObject upgradedFlame; // For Turret D range buff
     [SerializeField] private Transform firingPort;
     [SerializeField] private LineRenderer rayLine;
 
@@ -37,6 +48,18 @@ public class TurretScript : MonoBehaviour
     [Header("Turret Type")]
     [SerializeField] private TurretType selectedType;
 
+    // Base values for resetting buffs
+    private float baseTargetingRange;
+    private float baseAChargeTime;
+    private float baseADamage;
+    private float baseBFireRate;
+    private float baseFireRate;
+    private int baseBulletsPerShot;
+    private float baseSpreadAngle;
+    private float baseSpawnDuration;
+    private float baseFireCooldown;
+    private GameObject baseFlamePrefab;
+
     private float chargeTimer;
     private bool isCharging;
     private bool isRayActive;
@@ -47,32 +70,49 @@ public class TurretScript : MonoBehaviour
     private bool isOnCooldown;
     private GameObject currentSpawnedObj;
 
-    private enum TurretType
+    private List<Buff> activeBuffs = new List<Buff>();
+
+    public enum TurretType
     {
         TurretA,
         TurretB,
         TurretC,
         TurretD
-
     }
-
 
     private Transform target;
     private Quaternion initialRotation;
 
     private void Start()
     {
-        
         initialRotation = turretRotationPoint.localRotation;
+
+        // Store base values
+        baseTargetingRange = targetingRange;
+        baseAChargeTime = AChargeTime;
+        baseADamage = ADamage;
+        baseBFireRate = BFireRate;
+        baseFireRate = fireRate;
+        baseBulletsPerShot = bulletsPerShot;
+        baseSpreadAngle = spreadAngle;
+        baseSpawnDuration = spawnDuration;
+        baseFireCooldown = fireCooldown;
+        baseFlamePrefab = flame;
+    }
+
+    private void Update()
+    {
+        // Handle buff expiration
+        HandleBuffExpiration();
     }
 
     private void FixedUpdate()
     {
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer <= 0) isOnCooldown = false;
+
         if (currentSpawnedObj != null)
         {
-
             currentSpawnedObj.transform.position = firingPort.position;
             currentSpawnedObj.transform.rotation = firingPort.rotation;
         }
@@ -80,18 +120,7 @@ public class TurretScript : MonoBehaviour
         if (target == null)
         {
             if (isRayActive) DisableRay();
-            
             isWindingUp = false;
-            //if (isOnCooldown)
-            //{
-            //    if (currentSpawnedObj != null)
-            //    {
-            //        Destroy(currentSpawnedObj);
-            //        currentSpawnedObj = null;
-            //    }
-            //    return;
-
-            //}
             FindTarget();
         }
         else
@@ -103,85 +132,198 @@ public class TurretScript : MonoBehaviour
             }
             else
             {
-                if(selectedType == TurretType.TurretA)
+                switch (selectedType)
                 {
-                    if (!isCharging && !isRayActive)
-                    {
-                        chargeTimer = AChargeTime;
-                        isCharging = true;
-                    }
-
-                    if (isCharging)
-                    {
-                        chargeTimer -= Time.deltaTime;
-                        if (chargeTimer <= 0)
-                        {
-                            FireRay();
-                            isCharging = false;
-                        }
-                    }
-                    else if (isRayActive)
-                    {
-                        chargeTimer -= Time.deltaTime;
-                        if (chargeTimer <= 0) DisableRay();
-                    }
+                    case TurretType.TurretA:
+                        HandleTurretA();
+                        break;
+                    case TurretType.TurretB:
+                        HandleTurretB();
+                        break;
+                    case TurretType.TurretC:
+                        HandleTurretC();
+                        break;
+                    case TurretType.TurretD:
+                        HandleTurretD();
+                        break;
                 }
-                else if (selectedType == TurretType.TurretB)
-                {
-                    fireTimer -= Time.deltaTime;
-                    if (fireTimer <= 0)
-                    {
-                        Shoot();
-                        fireTimer = 1f / BFireRate;
-                    }
-                }
-                else if (selectedType == TurretType.TurretC)
-                {
-                    if (!isWindingUp)
-                    {
-                        windUpTimer = windUpTime;
-                        isWindingUp = true;
-                        fireTimer = 0; 
-                    }
-
-                    windUpTimer -= Time.deltaTime;
-                    if (windUpTimer <= 0)
-                    {
-                        fireTimer -= Time.deltaTime;
-                        if (fireTimer <= 0)
-                        {
-                            FireSpread();
-                            fireTimer = 1f / fireRate;
-                        }
-                    }
-                }
-                else if (selectedType == TurretType.TurretD)
-                {
-
-                    if (currentSpawnedObj == null && !isOnCooldown)
-                    {
-                        SpawnObject();
-                    }
-                    else if (currentSpawnedObj != null)
-                    {
-                        
-                        currentSpawnedObj.transform.position = firingPort.position;
-                        currentSpawnedObj.transform.rotation = firingPort.rotation;
-                    }
-
-                }
-
             }
         }
 
-       
         if (target == null)
         {
-            turretRotationPoint.localRotation = Quaternion.RotateTowards(
-                turretRotationPoint.localRotation,
-                initialRotation,
-                returnRotationSpeed * Time.deltaTime
-            );
+            ReturnToInitialRotation();
+        }
+    }
+
+    private void HandleTurretA()
+    {
+        if (!isCharging && !isRayActive)
+        {
+            chargeTimer = AChargeTime;
+            isCharging = true;
+        }
+
+        if (isCharging)
+        {
+            chargeTimer -= Time.deltaTime;
+            if (chargeTimer <= 0)
+            {
+                FireRay();
+                isCharging = false;
+            }
+        }
+        else if (isRayActive)
+        {
+            chargeTimer -= Time.deltaTime;
+            if (chargeTimer <= 0) DisableRay();
+        }
+    }
+
+    private void HandleTurretB()
+    {
+        fireTimer -= Time.deltaTime;
+        if (fireTimer <= 0)
+        {
+            Shoot();
+            fireTimer = 1f / BFireRate;
+        }
+    }
+
+    private void HandleTurretC()
+    {
+        if (!isWindingUp)
+        {
+            windUpTimer = windUpTime;
+            isWindingUp = true;
+            fireTimer = 0;
+        }
+
+        windUpTimer -= Time.deltaTime;
+        if (windUpTimer <= 0)
+        {
+            fireTimer -= Time.deltaTime;
+            if (fireTimer <= 0)
+            {
+                FireSpread();
+                fireTimer = 1f / fireRate;
+            }
+        }
+    }
+
+    private void HandleTurretD()
+    {
+        if (currentSpawnedObj == null && !isOnCooldown)
+        {
+            SpawnObject();
+        }
+        else if (currentSpawnedObj != null)
+        {
+            currentSpawnedObj.transform.position = firingPort.position;
+            currentSpawnedObj.transform.rotation = firingPort.rotation;
+        }
+    }
+
+    public void ApplyBuff(float damageBoostPercent, float rangeBoostPercent,
+                          float fireRateBoostPercent, float duration)
+    {
+        Buff newBuff = new Buff
+        {
+            damageMultiplier = 1 + damageBoostPercent / 100f,
+            rangeMultiplier = 1 + rangeBoostPercent / 100f,
+            fireRateMultiplier = 1 + fireRateBoostPercent / 100f,
+            duration = duration,
+            endTime = Time.time + duration
+        };
+
+        // Special handling for Turret D range buff
+        if (selectedType == TurretType.TurretD && rangeBoostPercent > 0)
+        {
+            newBuff.specialPrefab = upgradedFlame;
+        }
+
+        activeBuffs.Add(newBuff);
+        ApplyBuffEffects();
+    }
+
+    private void ApplyBuffEffects()
+    {
+        // Reset to base values
+        targetingRange = baseTargetingRange;
+        AChargeTime = baseAChargeTime;
+        ADamage = baseADamage;
+        BFireRate = baseBFireRate;
+        fireRate = baseFireRate;
+        bulletsPerShot = baseBulletsPerShot;
+        spreadAngle = baseSpreadAngle;
+        spawnDuration = baseSpawnDuration;
+        fireCooldown = baseFireCooldown;
+        flame = baseFlamePrefab;
+
+        // Apply all active buffs
+        foreach (Buff buff in activeBuffs)
+        {
+            switch (selectedType)
+            {
+                case TurretType.TurretA:
+                    // Damage buff increases ray damage
+                    ADamage *= buff.damageMultiplier;
+                    // Fire rate buff decreases charge time
+                    AChargeTime /= buff.fireRateMultiplier;
+                    break;
+
+                case TurretType.TurretB:
+                    // Damage buff increases bullet damage
+                    // (Bullet damage is applied when created)
+                    // Fire rate buff increases fire rate
+                    BFireRate *= buff.fireRateMultiplier;
+                    break;
+
+                case TurretType.TurretC:
+                    // Damage buff increases bullet damage
+                    // (Bullet damage is applied when created)
+                    // Fire rate buff increases fire rate
+                    fireRate *= buff.fireRateMultiplier;
+                    // Range buff increases range and decreases spread
+                    targetingRange *= buff.rangeMultiplier;
+                    spreadAngle /= buff.rangeMultiplier;
+                    // Bullets per shot buff
+                    bulletsPerShot = Mathf.RoundToInt(bulletsPerShot * buff.damageMultiplier);
+                    break;
+
+                case TurretType.TurretD:
+                    // Damage buff increases flame damage
+                    // (Flame damage is applied when created)
+                    // Fire rate buff increases spawn duration and decreases cooldown
+                    spawnDuration *= buff.fireRateMultiplier;
+                    fireCooldown /= buff.fireRateMultiplier;
+                    // Range buff increases range and changes prefab
+                    targetingRange *= buff.rangeMultiplier;
+                    if (buff.specialPrefab != null)
+                    {
+                        flame = buff.specialPrefab;
+                    }
+                    break;
+            }
+        }
+    }
+
+    private void HandleBuffExpiration()
+    {
+        bool buffsChanged = false;
+
+        for (int i = activeBuffs.Count - 1; i >= 0; i--)
+        {
+            if (Time.time >= activeBuffs[i].endTime)
+            {
+                activeBuffs.RemoveAt(i);
+                buffsChanged = true;
+            }
+        }
+
+        if (buffsChanged)
+        {
+            ApplyBuffEffects();
         }
     }
 
@@ -200,7 +342,6 @@ public class TurretScript : MonoBehaviour
             Vector2 directionToTarget = (hit.transform.position - transform.position).normalized;
             float angleToTarget = Vector2.Angle(transform.up, directionToTarget);
 
-            
             if (angleToTarget <= fieldOfViewAngle / 2f)
             {
                 target = hit.transform;
@@ -213,11 +354,9 @@ public class TurretScript : MonoBehaviour
     {
         if (target == null) return false;
 
-        
         float distance = Vector2.Distance(target.position, transform.position);
         if (distance > targetingRange) return false;
 
-        
         Vector2 directionToTarget = (target.position - transform.position).normalized;
         float angleToTarget = Vector2.Angle(transform.up, directionToTarget);
         return (angleToTarget <= fieldOfViewAngle / 2f);
@@ -236,27 +375,12 @@ public class TurretScript : MonoBehaviour
         );
     }
 
-
-    private void OnDrawGizmosSelected()
+    private void ReturnToInitialRotation()
     {
-        
-        Handles.color = Color.white;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
-
-        
-        Vector3 forward = transform.up;
-        Vector3 leftBound = Quaternion.AngleAxis(-fieldOfViewAngle / 2f, Vector3.forward) * forward;
-        Vector3 rightBound = Quaternion.AngleAxis(fieldOfViewAngle / 2f, Vector3.forward) * forward;
-
-        Handles.color = Color.yellow;
-        Handles.DrawLine(transform.position, transform.position + leftBound * targetingRange);
-        Handles.DrawLine(transform.position, transform.position + rightBound * targetingRange);
-        Handles.DrawWireArc(
-            transform.position,
-            Vector3.forward,
-            rightBound,
-            -fieldOfViewAngle,
-            targetingRange
+        turretRotationPoint.localRotation = Quaternion.RotateTowards(
+            turretRotationPoint.localRotation,
+            initialRotation,
+            returnRotationSpeed * Time.deltaTime
         );
     }
 
@@ -272,8 +396,9 @@ public class TurretScript : MonoBehaviour
         {
             if (hit.collider != null)
             {
+                // Apply buffed damage
                 //hit.collider.GetComponent<Health>()?.TakeDamage(ADamage);
-                Debug.Log("Hit");
+                Debug.Log("DAMAGEBLYAT");
             }
         }
 
@@ -290,6 +415,14 @@ public class TurretScript : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firingPort.position, firingPort.rotation);
+
+        // Apply buffed damage
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
+        }
+
         bullet.GetComponent<Rigidbody2D>().linearVelocity = firingPort.up * BBulletSpeed;
         Destroy(bullet, 3f);
     }
@@ -304,17 +437,59 @@ public class TurretScript : MonoBehaviour
             float currentAngle = startAngle + angleStep * i;
             Quaternion rotation = firingPort.rotation * Quaternion.Euler(0, 0, currentAngle);
             GameObject bullet = Instantiate(machineBullet, firingPort.position, rotation);
+
+            // Apply buffed damage
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
+            }
+
             bullet.GetComponent<Rigidbody2D>().linearVelocity = bullet.transform.up * machineBulletSpeed;
             Destroy(bullet, 4f);
         }
     }
+
     void SpawnObject()
     {
         currentSpawnedObj = Instantiate(flame, firingPort.position, firingPort.rotation);
+
+        // Apply buffed damage
+        Flame flameScript = currentSpawnedObj.GetComponent<Flame>();
+        if (flameScript != null)
+        {
+            flameScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
+        }
+
         Destroy(currentSpawnedObj, spawnDuration);
         isOnCooldown = true;
         cooldownTimer = fireCooldown;
     }
 
-    
+    private float GetDamageMultiplier()
+    {
+        float multiplier = 1f;
+        foreach (Buff buff in activeBuffs)
+        {
+            multiplier *= buff.damageMultiplier;
+        }
+        return multiplier;
+    }
+
+    // For debugging buffs in editor
+    private void OnDrawGizmosSelected()
+    {
+        // Targeting range
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, targetingRange);
+
+        // Field of view
+        Vector3 forward = transform.up;
+        Vector3 leftBound = Quaternion.AngleAxis(-fieldOfViewAngle / 2f, Vector3.forward) * forward;
+        Vector3 rightBound = Quaternion.AngleAxis(fieldOfViewAngle / 2f, Vector3.forward) * forward;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + leftBound * targetingRange);
+        Gizmos.DrawLine(transform.position, transform.position + rightBound * targetingRange);
+    }
 }
