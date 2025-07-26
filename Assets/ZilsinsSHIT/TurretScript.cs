@@ -418,11 +418,11 @@ public class TurretScript : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firingPort.position, firingPort.rotation);
 
         // Apply buffed damage
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bulletScript != null)
-        {
-            bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
-        }
+        //Bullet bulletScript = bullet.GetComponent<Bullet>();
+        //if (bulletScript != null)
+        //{
+        //    bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
+        //}
 
         bullet.GetComponent<Rigidbody2D>().linearVelocity = firingPort.up * BBulletSpeed;
         Destroy(bullet, 3f);
@@ -439,12 +439,12 @@ public class TurretScript : MonoBehaviour
             Quaternion rotation = firingPort.rotation * Quaternion.Euler(0, 0, currentAngle);
             GameObject bullet = Instantiate(machineBullet, firingPort.position, rotation);
 
-            // Apply buffed damage
-            Bullet bulletScript = bullet.GetComponent<Bullet>();
-            if (bulletScript != null)
-            {
-                bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
-            }
+            //// Apply buffed damage
+            //Bullet bulletScript = bullet.GetComponent<Bullet>();
+            //if (bulletScript != null)
+            //{
+            //    bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
+            //}
 
             bullet.GetComponent<Rigidbody2D>().linearVelocity = bullet.transform.up * machineBulletSpeed;
             Destroy(bullet, 4f);
@@ -456,11 +456,11 @@ public class TurretScript : MonoBehaviour
         currentSpawnedObj = Instantiate(flame, firingPort.position, firingPort.rotation);
 
         // Apply buffed damage
-        Flame flameScript = currentSpawnedObj.GetComponent<Flame>();
-        if (flameScript != null)
-        {
-            flameScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
-        }
+        //Flame flameScript = currentSpawnedObj.GetComponent<Flame>();
+        //if (flameScript != null)
+        //{
+        //    flameScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
+        //}
 
         Destroy(currentSpawnedObj, spawnDuration);
         isOnCooldown = true;
