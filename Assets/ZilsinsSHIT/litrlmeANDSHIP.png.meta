@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: df1163b75060e1944978847e60eb855b
+guid: f3a9a13d3137e4b4bb3c5fd717065087
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1579701513854671903
-    second: goryebani_0
+      213: -4570790030182017308
+    second: litrlmeANDSHIP_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: goryebani_0
+      name: litrlmeANDSHIP_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2169
-        height: 1653
+        width: 4800
+        height: 2700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e3ab8fb7d5c31ae0800000000000000
-      internalID: -1579701513854671903
+      spriteID: 4e69a144faa4190c0800000000000000
+      internalID: -4570790030182017308
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      goryebani_0: -1579701513854671903
+      litrlmeANDSHIP_0: -4570790030182017308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
