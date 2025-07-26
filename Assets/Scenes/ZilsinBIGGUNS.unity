@@ -1226,11 +1226,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
       propertyPath: deck.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
       propertyPath: deck.Array.data[1].cardName
       value: range1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[2].cardName
+      value: range2
       objectReference: {fileID: 0}
     - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
       propertyPath: deck.Array.data[0].energyCost
@@ -1241,11 +1245,23 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[2].energyCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
       propertyPath: deck.Array.data[1].buffDuration
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[2].buffDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
       propertyPath: deck.Array.data[1].rangeBuffPercent
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[2].rangeBuffPercent
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6960861527448497420, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
