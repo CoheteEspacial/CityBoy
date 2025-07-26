@@ -1224,6 +1224,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1054269808}
     m_Modifications:
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[1].cardName
+      value: range1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[0].energyCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[1].energyCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[1].buffDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962792492055546745, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
+      propertyPath: deck.Array.data[1].rangeBuffPercent
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6960861527448497420, guid: 70501b8fc57486f488d9a6ad2b1203a4, type: 3}
       propertyPath: m_Name
       value: ConveyorSystem
