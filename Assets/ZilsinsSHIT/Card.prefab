@@ -102,15 +102,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd9edd2fb577a848a8689bf767a6bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardType: 0
-  returnSpeed: 200
-  damageBuffPercent: 0
-  rangeBuffPercent: 0
-  fireRateBuffPercent: 0
-  buffDuration: 5
-  validTargetColor: {r: 0, g: 1, b: 0, a: 1}
-  invalidTargetColor: {r: 1, g: 0, b: 0, a: 1}
-  dragAlpha: 0.8
+  cardImage: {fileID: 6156614378403397156}
+  energyCostText: {fileID: 0}
+  cardNameText: {fileID: 0}
+  cardTypeIcon: {fileID: 6156614378403397156}
+  turretIcon: {fileID: 1381306929455971074, guid: c5191ee1f199b204e9153c921583ca1e, type: 3}
+  cityIcon: {fileID: 1381306929455971074, guid: c5191ee1f199b204e9153c921583ca1e, type: 3}
+  enemyIcon: {fileID: 1381306929455971074, guid: c5191ee1f199b204e9153c921583ca1e, type: 3}
+  conveyorSystem: {fileID: 0}
+  cardData:
+    cardName: 
+    cardType: 0
+    energyCost: 0
+    damageBuffPercent: 0
+    rangeBuffPercent: 0
+    fireRateBuffPercent: 0
+    buffDuration: 0
+  currentPosition: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+  isDragging: 0
 --- !u!61 &3356713403793202800
 BoxCollider2D:
   m_ObjectHideFlags: 0

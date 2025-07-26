@@ -7,31 +7,27 @@ using System.Collections.Generic;
 
 public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [Header("Card Settings")]
-    public CardType cardType;
-    public float returnSpeed = 10f;
+    [Header("References")]
+    public Image cardImage;
+    public Text energyCostText;
+    public Text cardNameText;
+    public Image cardTypeIcon;
+    public Sprite turretIcon;
+    public Sprite cityIcon;
+    public Sprite enemyIcon;
 
-    [Header("Turret Buff Settings")]
-    [Range(0, 100)] public float damageBuffPercent = 10f;
-    [Range(0, 100)] public float rangeBuffPercent = 10f;
-    [Range(0, 100)] public float fireRateBuffPercent = 10f;
-    public float buffDuration = 5f;
-
-    [Header("Visual Feedback")]
-    public Color validTargetColor = Color.green;
-    public Color invalidTargetColor = Color.red;
-    public float dragAlpha = 0.8f;
+    [HideInInspector] public ConveyorBeltSystem conveyorSystem;
+    [HideInInspector] public CardData cardData;
+    [HideInInspector] public CardPosition currentPosition;
+    [HideInInspector] public Vector3 targetPosition;
+    [HideInInspector] public bool isDragging;
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector2 originalPosition;
     private Transform originalParent;
-    private bool isDragging;
     private bool isReturning;
     private GameObject currentTarget;
-    private Image cardImage;
-    private int originalSiblingIndex;
-    private bool isUsed;
     private Camera mainCamera;
     private Mouse currentMouse;
 
@@ -39,34 +35,59 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        cardImage = GetComponent<Image>();
-        originalParent = transform.parent;
         mainCamera = Camera.main;
         currentMouse = Mouse.current;
     }
 
     void Start()
     {
-        originalPosition = rectTransform.anchoredPosition;
-        originalSiblingIndex = transform.GetSiblingIndex();
+        originalParent = transform.parent;
+
+        if (cardData != null)
+        {
+            //energyCostText.text = cardData.energyCost.ToString();
+            //cardNameText.text = cardData.cardName;
+
+            // Set card type icon
+            switch (cardData.cardType)
+            {
+                case CardType.TurretBuff:
+                    if (turretIcon != null) cardTypeIcon.sprite = turretIcon;
+                    cardTypeIcon.color = Color.red;
+                    break;
+                case CardType.CityBuff:
+                    if (cityIcon != null) cardTypeIcon.sprite = cityIcon;
+                    cardTypeIcon.color = Color.blue;
+                    break;
+                case CardType.EnemyEffect:
+                    if (enemyIcon != null) cardTypeIcon.sprite = enemyIcon;
+                    cardTypeIcon.color = Color.green;
+                    break;
+            }
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (isReturning || isUsed) return;
+        if (isReturning) return;
 
+        isDragging = true;
         originalPosition = rectTransform.anchoredPosition;
+
+        // Save current parent
+        originalParent = transform.parent;
+
+        // Move to top of hierarchy
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
 
-        isDragging = true;
-        canvasGroup.alpha = dragAlpha;
+        canvasGroup.alpha = 0.8f;
         canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!isDragging || isReturning || isUsed) return;
+        if (!isDragging || isReturning) return;
 
         Vector2 mousePosition = currentMouse.position.ReadValue();
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -77,33 +98,57 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         );
         rectTransform.localPosition = localPoint;
 
+        // Highlight valid targets
         CheckForValidTarget(mousePosition);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!isDragging || isReturning || isUsed) return;
+        if (!isDragging || isReturning) return;
 
         isDragging = false;
         canvasGroup.alpha = 1f;
+
+        // Reset visual feedback
         cardImage.color = Color.white;
 
-        if (currentTarget != null)
+        // Check if dropped on destroy zone
+        Vector2 mousePosition = currentMouse.position.ReadValue();
+        DestroyZone destroyZone = FindObjectOfType<DestroyZone>();
+        if (destroyZone != null && destroyZone.IsPointInside(mousePosition))
         {
-            ApplyCardEffect();
-            HandleCardUsage();
+            if (conveyorSystem.CanDestroyCard())
+            {
+                conveyorSystem.DestroyCardForEnergy(this);
+                return;
+            }
+        }
+
+        // Find current target under mouse
+        GameObject target = FindTargetUnderMouse(mousePosition);
+
+        // Apply card effect if we have a valid target
+        if (target != null && IsValidTarget(target))
+        {
+            if (conveyorSystem.TrySpendEnergy(cardData.energyCost))
+            {
+                ApplyCardEffect(target);
+                conveyorSystem.RemoveCard(this);
+            }
+            else
+            {
+                StartCoroutine(ReturnToConveyor());
+            }
         }
         else
         {
-            StartCoroutine(ReturnToOriginalPosition());
+            StartCoroutine(ReturnToConveyor());
         }
     }
 
-    private void CheckForValidTarget(Vector2 mousePosition)
+    private GameObject FindTargetUnderMouse(Vector2 mousePosition)
     {
-        currentTarget = null;
-        cardImage.color = Color.white;
-
+        // Check UI elements first
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
             position = mousePosition
@@ -112,20 +157,20 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
-        Ray ray = mainCamera.ScreenPointToRay(mousePosition);
-        RaycastHit2D[] physicsHits = Physics2D.GetRayIntersectionAll(ray);
-
+        // Check for valid targets in UI
         foreach (RaycastResult result in results)
         {
             if (result.gameObject == gameObject) continue;
 
             if (IsValidTarget(result.gameObject))
             {
-                currentTarget = result.gameObject;
-                cardImage.color = validTargetColor;
-                return;
+                return result.gameObject;
             }
         }
+
+        // Check for game objects with colliders
+        Ray ray = mainCamera.ScreenPointToRay(mousePosition);
+        RaycastHit2D[] physicsHits = Physics2D.GetRayIntersectionAll(ray);
 
         foreach (RaycastHit2D hit in physicsHits)
         {
@@ -133,71 +178,110 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
             if (IsValidTarget(hit.collider.gameObject))
             {
-                currentTarget = hit.collider.gameObject;
-                cardImage.color = validTargetColor;
-                return;
+                return hit.collider.gameObject;
             }
         }
+
+        return null;
+    }
+
+    private void CheckForValidTarget(Vector2 mousePosition)
+    {
+        GameObject target = FindTargetUnderMouse(mousePosition);
+        cardImage.color = target != null ? Color.green : Color.white;
     }
 
     private bool IsValidTarget(GameObject target)
     {
-        // Allow cards to be applied to turrets
-        return target.GetComponent<TurretScript>() != null;
+        // Check if card type matches target type
+        switch (cardData.cardType)
+        {
+            case CardType.TurretBuff:
+                return target.GetComponent<TurretScript>() != null;
+
+            case CardType.CityBuff:
+                //return target.GetComponent<CityManager>() != null;
+
+            case CardType.EnemyEffect:
+                //return target.GetComponent<Enemy>() != null;
+
+            default:
+                return false;
+        }
     }
 
-    private IEnumerator ReturnToOriginalPosition()
+    private IEnumerator ReturnToConveyor()
     {
-        if (isReturning) yield break;
-
         isReturning = true;
         canvasGroup.blocksRaycasts = false;
 
-        Vector2 startPosition = rectTransform.anchoredPosition;
-        float distance = Vector2.Distance(startPosition, originalPosition);
-        float duration = Mathf.Clamp(distance / returnSpeed, 0.1f, 1f);
-        float elapsed = 0f;
+        Vector3 startPosition = transform.position;
 
-        while (elapsed < duration)
+        // Use conveyor system's return speed
+        float returnSpeed = conveyorSystem.cardReturnSpeed;
+
+        while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
         {
-            if (isUsed) yield break;
-
-            rectTransform.anchoredPosition = Vector2.Lerp(
-                startPosition,
-                originalPosition,
-                elapsed / duration
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                returnSpeed * Time.deltaTime
             );
-            elapsed += Time.deltaTime;
             yield return null;
         }
 
-        rectTransform.anchoredPosition = originalPosition;
+        transform.position = targetPosition;
         transform.SetParent(originalParent);
-        transform.SetSiblingIndex(originalSiblingIndex);
         canvasGroup.blocksRaycasts = true;
         isReturning = false;
     }
 
-    private void ApplyCardEffect()
+    private void ApplyCardEffect(GameObject target)
     {
-        if (currentTarget == null || isUsed) return;
+        if (target == null) return;
 
-        TurretScript turret = currentTarget.GetComponent<TurretScript>();
-        if (turret != null)
+        switch (cardData.cardType)
         {
-            turret.ApplyBuff(
-                damageBuffPercent,
-                rangeBuffPercent,
-                fireRateBuffPercent,
-                buffDuration
-            );
-        }
-    }
+            case CardType.TurretBuff:
+                TurretScript turret = target.GetComponent<TurretScript>();
+                if (turret != null)
+                {
+                    turret.ApplyBuff(
+                        cardData.damageBuffPercent,
+                        cardData.rangeBuffPercent,
+                        cardData.fireRateBuffPercent,
+                        cardData.buffDuration
+                    );
+                }
+                break;
 
-    private void HandleCardUsage()
-    {
-        if (isUsed) return;
-        isUsed = true;
+            case CardType.CityBuff:
+                //CityManager city = target.GetComponent<CityManager>();
+                //if (city != null)
+                //{
+                //    city.ApplyBuff(
+                //        cardData.damageBuffPercent,
+                //        cardData.rangeBuffPercent,
+                //        cardData.fireRateBuffPercent,
+                //        cardData.buffDuration
+                //    );
+                //}
+                break;
+
+            case CardType.EnemyEffect:
+                //Enemy enemy = target.GetComponent<Enemy>();
+                //if (enemy != null)
+                //{
+                //    enemy.ApplyEffect(
+                //        cardData.damageBuffPercent,
+                //        cardData.rangeBuffPercent,
+                //        cardData.fireRateBuffPercent,
+                //        cardData.buffDuration
+                //    );
+                //}
+                break;
+        }
+
         StartCoroutine(DestroyCard());
     }
 
@@ -214,22 +298,6 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             yield return null;
         }
 
-        transform.SetParent(originalParent);
         Destroy(gameObject);
     }
-}
-
-public enum CardType { TurretBuff, CityBuff, EnemyEffect }
-
-// Sample classes for bullets and flames
-public class Bullet : MonoBehaviour
-{
-    public float damage = 1f;
-    // Other bullet logic...
-}
-
-public class Flame : MonoBehaviour
-{
-    public float damage = 1f;
-    // Other flame logic...
 }
