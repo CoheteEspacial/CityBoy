@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 
     [HideInInspector] public float currentHealth;
     private Transform player;
+    public bool diesOnContact = false; // If true, the enemy dies when colliding with the player
 
     private void Awake()
     {

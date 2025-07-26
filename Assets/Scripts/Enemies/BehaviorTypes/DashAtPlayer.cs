@@ -42,7 +42,16 @@ public class DashAtPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        enemy.TakeDamage(1);
+        if (enemy.diesOnContact)
+        {
+            enemy.TakeDamage(enemy.currentHealth); // Kill the enemy on contact
+        }
+        else
+        {
+            enemy.TakeDamage(1);
+        }
+
+            
         Debug.Log($"Enemy Health: {enemy.currentHealth}");
         if (isReturning) return;
 

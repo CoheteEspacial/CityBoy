@@ -399,6 +399,7 @@ public class TurretScript : MonoBehaviour
                 // Apply buffed damage
                 //hit.collider.GetComponent<Health>()?.TakeDamage(ADamage);
                 Debug.Log("DAMAGEBLYAT");
+                hit.collider.GetComponent<Enemy>()?.TakeDamage(ADamage * GetDamageMultiplier());
             }
         }
 

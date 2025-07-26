@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd76d1ce9233f0c4788bbf23103d3bd7, type: 3}
-  m_Name: CommonSuicider
+  m_Name: Shooter
   m_EditorClassIdentifier: 
-  health: 5
-  damage: 1
-  contactDamage: 3
+  health: 15
+  damage: 3
+  contactDamage: 1
   isFlying: 0
