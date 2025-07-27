@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
+using System;
 
 public class TurretScript : MonoBehaviour
 {
@@ -93,8 +95,13 @@ public class TurretScript : MonoBehaviour
     private Transform target;
     private Quaternion initialRotation;
 
+    [Header("UI")]
+    public TMP_Dropdown typeDropdown;
+
     private void Start()
     {
+        SetupDropdown();
+
         initialRotation = turretRotationPoint.localRotation;
 
         // Store base values
@@ -522,6 +529,41 @@ public class TurretScript : MonoBehaviour
         }
         return multiplier;
     }
+
+    void SetupDropdown()
+    {
+        if (typeDropdown == null)
+        {
+            Debug.LogWarning($"Turret '{gameObject.name}' has no Dropdown assigned.");
+            return;
+        }
+
+        // Clear previous options
+        typeDropdown.ClearOptions();
+
+        // Get enum names as list
+        var options = new System.Collections.Generic.List<string>(Enum.GetNames(typeof(TurretType)));
+        typeDropdown.AddOptions(options);
+
+        // Set current selected value
+        typeDropdown.value = (int)selectedType;
+        typeDropdown.RefreshShownValue();
+
+        // Add listener to update enum when dropdown changes
+        typeDropdown.onValueChanged.AddListener(OnDropdownChanged);
+    }
+
+    void OnDropdownChanged(int index)
+    {
+        selectedType = (TurretType)index;
+        Debug.Log($"Turret '{gameObject.name}' changed type to: {selectedType}");
+        if (Player.Instance != null)
+        {
+            Player.Instance.turretTypes[turretSlotIndex] = selectedType;
+            // ? No need to save to PlayerPrefs
+        }
+    }
+
 
     // For debugging buffs in editor
     private void OnDrawGizmosSelected()
