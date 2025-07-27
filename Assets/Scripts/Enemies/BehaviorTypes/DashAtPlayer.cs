@@ -8,6 +8,8 @@ public class DashAtPlayer : MonoBehaviour
     private float lastDashTime = -Mathf.Infinity;
     private Vector2 jumpStartY;
     private bool isReturning = false;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private float volume = 1f;
 
     [Header("Dash Settings")]
     public float dashTriggerDistance = 2f;
@@ -81,6 +83,8 @@ public class DashAtPlayer : MonoBehaviour
     private System.Collections.IEnumerator ReturnToGround()
     {
         rb.gravityScale = returnGravityScale;
+        SoundFXManager.Instance.PlaySoundFXClip(hitSound, transform, volume);
+
 
         // Wait until we reach or fall below the original Y
         while (transform.position.y > jumpStartY.y)

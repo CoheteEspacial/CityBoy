@@ -7,7 +7,12 @@ public class DestroyZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [Header("Appearance")]
     public Color activeColor = Color.red;
     public Color cooldownColor = Color.gray;
-
+    [SerializeField] private AudioClip numSound;
+    [SerializeField] private float volume = 1f;
+    [SerializeField] private Animator animator;
+    private bool anim;
+    private bool some = true;
+    
     private Image zoneImage;
     private bool isPointerOver;
     private ConveyorBeltSystem conveyorSystem;
@@ -22,14 +27,31 @@ public class DestroyZone : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     void Update()
     {
         UpdateAppearance();
+        
     }
 
     private void UpdateAppearance()
     {
         if (conveyorSystem != null)
         {
-            zoneImage.color = conveyorSystem.CanDestroyCard() ? activeColor : cooldownColor;
+            //animator.SetBool("Close", true);
+            anim = conveyorSystem.CanDestroyCard() ? false : true;
+            if (anim && some)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(numSound, transform, volume);
+                some = false;
+            }
+            else if (!anim && !some)
+            {
+                some = true;
+                
+            }
+            animator.SetBool("Close", anim);
         }
+        //else
+        //{
+        //    animator.SetBool("Close", false);
+        //}
     }
 
     public bool IsPointInside(Vector2 screenPoint)

@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 601324cb2424de9478af80c19da3d84b, type: 2}
+  deathSound: {fileID: 8300000, guid: 36d3bbc7c381d6045b7f968605a2c788, type: 3}
+  volume: 1
   currentHealth: 0
   diesOnContact: 1
 --- !u!50 &1459983844527318059
@@ -160,6 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687a58af5e05c054f9677a7f11ff5ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 8dd16a8e35f817e4bb917dd1d65322cb, type: 3}
+  volume: 1
   dashTriggerDistance: 2
   dashForce: 10
   dashCooldown: 2

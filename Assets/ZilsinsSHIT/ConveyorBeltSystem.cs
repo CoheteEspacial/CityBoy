@@ -11,6 +11,7 @@ public class ConveyorBeltSystem : MonoBehaviour
     public float conveyorSpeed = 1f;
     public float cardReturnSpeed = 2000f; // Faster return
     public int maxCards = 3;
+    
 
     [Header("Card Settings")]
     public GameObject cardPrefab;
@@ -28,6 +29,7 @@ public class ConveyorBeltSystem : MonoBehaviour
     private float spawnTimer;
     private float _lastDestroyTime;
     private bool _isDestroyOnCooldown;
+    
 
     // Card position tracking
     private Dictionary<DraggableCard, CardPosition> cardPositions = new Dictionary<DraggableCard, CardPosition>();
@@ -88,7 +90,12 @@ public class ConveyorBeltSystem : MonoBehaviour
             .Where(card => !activeCardNames.Contains(card.cardName))
             .ToList();
 
-        if (availableCards.Count == 0) return;
+        if (availableCards.Count == 0)
+        {
+
+            return;
+        }
+        
 
         int randomIndex = Random.Range(0, availableCards.Count);
         CardData cardData = availableCards[randomIndex];

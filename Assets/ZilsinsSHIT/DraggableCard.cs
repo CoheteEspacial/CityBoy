@@ -21,6 +21,8 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public CardPosition currentPosition;
     [HideInInspector] public Vector3 targetPosition;
     [HideInInspector] public bool isDragging;
+    [SerializeField] private AudioClip castSound;
+    [SerializeField] private float volume = 1f;
 
     private RectTransform rectTransform;
     private Vector2 originalPosition;
@@ -212,6 +214,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 var turret = target.GetComponent<TurretScript>();
                 if (turret != null)
                 {
+                    SoundFXManager.Instance.PlaySoundFXClip(castSound, transform, volume);
                     turret.ApplyBuff(
                         cardData.damageBuffPercent,
                         cardData.rangeBuffPercent,

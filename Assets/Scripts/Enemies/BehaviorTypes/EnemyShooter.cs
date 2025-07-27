@@ -8,6 +8,8 @@ public class EnemyShooter : MonoBehaviour
     public GameObject projectilePrefab;          // What to shoot
     public float shootCooldown = 1f;             // Delay between shots
     public float shootingDistance = 10f;         // Max range to start shooting
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private float volume = 1f;
 
     private Enemy enemy;
     private Transform player;
@@ -33,6 +35,7 @@ public class EnemyShooter : MonoBehaviour
 
             if (Time.time >= lastShootTime + shootCooldown)
             {
+
                 Shoot();
                 lastShootTime = Time.time;
             }
@@ -50,6 +53,7 @@ public class EnemyShooter : MonoBehaviour
 
     void Shoot()
     {
+        SoundFXManager.Instance.PlaySoundFXClip(shootSound, transform, volume);
         if (!projectilePrefab || !shootPoint) return;
 
         GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
