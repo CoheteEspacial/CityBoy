@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8637067985535324909}
   - component: {fileID: 6432917486804716064}
   - component: {fileID: 1844994708845537549}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Small Shit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

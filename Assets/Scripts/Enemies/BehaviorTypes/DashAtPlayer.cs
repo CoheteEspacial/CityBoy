@@ -59,6 +59,8 @@ public class DashAtPlayer : MonoBehaviour
                 enemy.TakeDamage(1);
             }
 
+            collision.GetComponent<Player>()?.TakeDamage(enemy.data.damage); // Deal damage to the player
+
             Vector2 playerPos = enemy.GetPlayer().position;
             float direction = Mathf.Sign(transform.position.x - playerPos.x);
 

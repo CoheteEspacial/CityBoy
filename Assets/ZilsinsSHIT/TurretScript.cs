@@ -416,7 +416,13 @@ public class TurretScript : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firingPort.position, firingPort.rotation);
-
+        Projectile projectileScript = bullet.GetComponent<Projectile>();
+        if (projectileScript != null)
+        {
+            projectileScript.SetDamage(ADamage * GetDamageMultiplier());
+            projectileScript.SetDirection(firingPort.up);
+            projectileScript.SetSpeed(BBulletSpeed);
+        }
         // Apply buffed damage
         //Bullet bulletScript = bullet.GetComponent<Bullet>();
         //if (bulletScript != null)
@@ -424,7 +430,7 @@ public class TurretScript : MonoBehaviour
         //    bulletScript.damage *= activeBuffs.Count > 0 ? GetDamageMultiplier() : 1f;
         //}
 
-        bullet.GetComponent<Rigidbody2D>().linearVelocity = firingPort.up * BBulletSpeed;
+        //bullet.GetComponent<Rigidbody2D>().linearVelocity = firingPort.up * BBulletSpeed;
         Destroy(bullet, 3f);
     }
 
