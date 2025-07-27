@@ -3,6 +3,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public EnemyData data;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private float volume = 1f;
 
     [HideInInspector] public float currentHealth;
     private Transform player;
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float amount)
     {
         Debug.Log($"Enemy Health: {currentHealth}");
+        SoundFXManager.Instance.PlaySoundFXClip(deathSound, transform, volume);
         currentHealth -= amount;
         if (currentHealth <= 0) Destroy(gameObject);
     }
