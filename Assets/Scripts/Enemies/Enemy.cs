@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private float volume = 1f;
     [SerializeField] private Animator animator;
+    private bool deathanim = true;
 
     [HideInInspector] public float currentHealth;
     private Transform player;
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Enemy Health: {currentHealth}");
         SoundFXManager.Instance.PlaySoundFXClip(deathSound, transform, volume);
         currentHealth -= amount;
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && deathanim)
         {
             DieAnim();
         }
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
     public void DieAnim()
     {
         animator.SetBool("Dead", true);
+        deathanim = false;
     }
     public void Die()
     {
