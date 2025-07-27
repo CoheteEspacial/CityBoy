@@ -106,7 +106,7 @@ MonoBehaviour:
   energyCostText: {fileID: 0}
   cardNameText: {fileID: 0}
   cardTypeIcon: {fileID: 6156614378403397156}
-  turretIcon: {fileID: 1381306929455971074, guid: c5191ee1f199b204e9153c921583ca1e, type: 3}
+  turretIcon: {fileID: 0}
   cityIcon: {fileID: 1381306929455971074, guid: c5191ee1f199b204e9153c921583ca1e, type: 3}
   enemyIcon: {fileID: 1381306929455971074, guid: c5191ee1f199b204e9153c921583ca1e, type: 3}
   conveyorSystem: {fileID: 0}
