@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 788792ee0953afd42b0e0103f36c1729
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6283758695689438697
+    second: prig-Sheet_0
+  - first:
+      213: -9080788127996105395
+    second: prig-Sheet_1
+  - first:
+      213: -4372636131066292476
+    second: prig-Sheet_2
+  - first:
+      213: 6204513900340635620
+    second: prig-Sheet_3
+  - first:
+      213: -4846558855437517729
+    second: prig-Sheet_4
+  - first:
+      213: -770406967389928836
+    second: prig-Sheet_5
+  - first:
+      213: -5137329996529648908
+    second: prig-Sheet_6
+  - first:
+      213: 6529255643252224192
+    second: prig-Sheet_7
+  - first:
+      213: -4408089982271662777
+    second: prig-Sheet_8
+  - first:
+      213: 8268764578860559397
+    second: prig-Sheet_9
+  - first:
+      213: 4952314760673386766
+    second: prig-Sheet_10
+  - first:
+      213: 3404156195769365755
+    second: prig-Sheet_11
+  - first:
+      213: -1104123364767082980
+    second: prig-Sheet_12
+  - first:
+      213: -6735484041702658207
+    second: prig-Sheet_13
+  - first:
+      213: -3691585981896852860
+    second: prig-Sheet_14
+  - first:
+      213: 8604431096805242864
+    second: prig-Sheet_15
+  - first:
+      213: -2008811059301210222
+    second: prig-Sheet_16
+  - first:
+      213: -6245178447817867975
+    second: prig-Sheet_17
+  - first:
+      213: 611743064713913678
+    second: prig-Sheet_18
+  - first:
+      213: 8019512366074283693
+    second: prig-Sheet_19
+  - first:
+      213: 6212583019726534438
+    second: prig-Sheet_20
+  - first:
+      213: 4591376626037252093
+    second: prig-Sheet_21
+  - first:
+      213: -6095375070831870374
+    second: prig-Sheet_22
+  - first:
+      213: 4607869173749298536
+    second: prig-Sheet_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: prig-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 111
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ab82152ca9bc8a0800000000000000
+      internalID: -6283758695689438697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 111
+        width: 62
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d25364f4f8af180800000000000000
+      internalID: -9080788127996105395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 111
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40751c32b964153c0800000000000000
+      internalID: -4372636131066292476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 111
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e7e6c9f48cda1650800000000000000
+      internalID: 6204513900340635620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 95
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c7f9e26609dbcb0800000000000000
+      internalID: -4846558855437517729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 95
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c72cc38e1f6fe45f0800000000000000
+      internalID: -770406967389928836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 111
+        width: 62
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa34ee369984b8b0800000000000000
+      internalID: -5137329996529648908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 55
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c073cff9639c9a50800000000000000
+      internalID: 6529255643252224192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 55
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7455db4248153d2c0800000000000000
+      internalID: -4408089982271662777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 81
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ce05e139d80c270800000000000000
+      internalID: 8268764578860559397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 55
+        width: 60
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e016cdd49082ab440800000000000000
+      internalID: 4952314760673386766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 87
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf437c8260efd3f20800000000000000
+      internalID: 3404156195769365755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 55
+        width: 60
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1659de46ad5da0f0800000000000000
+      internalID: -1104123364767082980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 85
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f200043f0c682a0800000000000000
+      internalID: -6735484041702658207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 69
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48af93bbb1ad4ccc0800000000000000
+      internalID: -3691585981896852860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 71
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7b66b8e74196770800000000000000
+      internalID: 8604431096805242864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 55
+        width: 60
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297a9751cf44f14e0800000000000000
+      internalID: -2008811059301210222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 55
+        width: 60
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93df3e24a4ba459a0800000000000000
+      internalID: -6245178447817867975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 55
+        width: 60
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45e41283195d7800800000000000000
+      internalID: 611743064713913678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 60
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6c5bbf1080b4f60800000000000000
+      internalID: 8019512366074283693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 60
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6277c6c3757873650800000000000000
+      internalID: 6212583019726534438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 60
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff5bf817b8d7bf30800000000000000
+      internalID: 4591376626037252093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 0
+        width: 60
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e7b42faa0e86ba0800000000000000
+      internalID: -6095375070831870374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prig-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 0
+        width: 70
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865bcc8999072ff30800000000000000
+      internalID: 4607869173749298536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      prig-Sheet_0: -6283758695689438697
+      prig-Sheet_1: -9080788127996105395
+      prig-Sheet_10: 4952314760673386766
+      prig-Sheet_11: 3404156195769365755
+      prig-Sheet_12: -1104123364767082980
+      prig-Sheet_13: -6735484041702658207
+      prig-Sheet_14: -3691585981896852860
+      prig-Sheet_15: 8604431096805242864
+      prig-Sheet_16: -2008811059301210222
+      prig-Sheet_17: -6245178447817867975
+      prig-Sheet_18: 611743064713913678
+      prig-Sheet_19: 8019512366074283693
+      prig-Sheet_2: -4372636131066292476
+      prig-Sheet_20: 6212583019726534438
+      prig-Sheet_21: 4591376626037252093
+      prig-Sheet_22: -6095375070831870374
+      prig-Sheet_23: 4607869173749298536
+      prig-Sheet_3: 6204513900340635620
+      prig-Sheet_4: -4846558855437517729
+      prig-Sheet_5: -770406967389928836
+      prig-Sheet_6: -5137329996529648908
+      prig-Sheet_7: 6529255643252224192
+      prig-Sheet_8: -4408089982271662777
+      prig-Sheet_9: 8268764578860559397
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

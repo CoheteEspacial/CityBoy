@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 7c87e92c6dd95f04ba5a4016934c3b2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4736177887275952741
+    second: Skok-Sheet_0
+  - first:
+      213: 6672305908992827704
+    second: Skok-Sheet_1
+  - first:
+      213: 3203173866766224322
+    second: Skok-Sheet_2
+  - first:
+      213: 2147548337201160486
+    second: Skok-Sheet_3
+  - first:
+      213: -3838063913633630236
+    second: Skok-Sheet_4
+  - first:
+      213: 8112010593972679481
+    second: Skok-Sheet_5
+  - first:
+      213: -74926252288581503
+    second: Skok-Sheet_6
+  - first:
+      213: 1509264096709366923
+    second: Skok-Sheet_7
+  - first:
+      213: -4703861552575771069
+    second: Skok-Sheet_8
+  - first:
+      213: -258439611941950398
+    second: Skok-Sheet_9
+  - first:
+      213: 5474925624721420479
+    second: Skok-Sheet_10
+  - first:
+      213: -8706155968630838096
+    second: Skok-Sheet_11
+  - first:
+      213: 8495141631928749584
+    second: Skok-Sheet_12
+  - first:
+      213: -3733993311491125069
+    second: Skok-Sheet_13
+  - first:
+      213: -3247050921753601947
+    second: Skok-Sheet_14
+  - first:
+      213: -2806006150832151095
+    second: Skok-Sheet_15
+  - first:
+      213: -5310569267959100237
+    second: Skok-Sheet_16
+  - first:
+      213: 3305954203475375545
+    second: Skok-Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skok-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 115
+        width: 110
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56aa424f1b84ab140800000000000000
+      internalID: 4736177887275952741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 115
+        width: 110
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831e1427fdac89c50800000000000000
+      internalID: 6672305908992827704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 57
+        width: 112
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb4a6229a5f37c20800000000000000
+      internalID: 3203173866766224322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 57
+        width: 116
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6212bd0a5df9dcd10800000000000000
+      internalID: 2147548337201160486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 57
+        width: 116
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e73f9a94357cbac0800000000000000
+      internalID: -3838063913633630236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 57
+        width: 116
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93372fbe7a6a39070800000000000000
+      internalID: 8112010593972679481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 115
+        width: 110
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180ecf378fec5fef0800000000000000
+      internalID: -74926252288581503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 115
+        width: 110
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84dc9413bbf1f410800000000000000
+      internalID: 1509264096709366923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 115
+        width: 110
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e8a1e07d688beb0800000000000000
+      internalID: -4703861552575771069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 57
+        width: 110
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c6f4eca86d96cf0800000000000000
+      internalID: -258439611941950398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 110
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0343929d7dafb40800000000000000
+      internalID: 5474925624721420479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 110
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcac9216458d2780800000000000000
+      internalID: -8706155968630838096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 0
+        width: 112
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01eceb71e4ec4e570800000000000000
+      internalID: 8495141631928749584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 0
+        width: 114
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b013e2edd03e2cc0800000000000000
+      internalID: -3733993311491125069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 114
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5689549e36820f2d0800000000000000
+      internalID: -3247050921753601947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 0
+        width: 114
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5a61ec5401f09d0800000000000000
+      internalID: -2806006150832151095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 0
+        width: 114
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc013c23611d46b0800000000000000
+      internalID: -5310569267959100237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 0
+        width: 114
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5fbd515db11ed20800000000000000
+      internalID: 3305954203475375545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Skok-Sheet_0: 4736177887275952741
+      Skok-Sheet_1: 6672305908992827704
+      Skok-Sheet_10: 5474925624721420479
+      Skok-Sheet_11: -8706155968630838096
+      Skok-Sheet_12: 8495141631928749584
+      Skok-Sheet_13: -3733993311491125069
+      Skok-Sheet_14: -3247050921753601947
+      Skok-Sheet_15: -2806006150832151095
+      Skok-Sheet_16: -5310569267959100237
+      Skok-Sheet_17: 3305954203475375545
+      Skok-Sheet_2: 3203173866766224322
+      Skok-Sheet_3: 2147548337201160486
+      Skok-Sheet_4: -3838063913633630236
+      Skok-Sheet_5: 8112010593972679481
+      Skok-Sheet_6: -74926252288581503
+      Skok-Sheet_7: 1509264096709366923
+      Skok-Sheet_8: -4703861552575771069
+      Skok-Sheet_9: -258439611941950398
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
