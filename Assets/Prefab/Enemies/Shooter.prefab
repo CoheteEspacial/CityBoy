@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 601324cb2424de9478af80c19da3d84b, type: 2}
   deathSound: {fileID: 8300000, guid: 36d3bbc7c381d6045b7f968605a2c788, type: 3}
-  volume: 1
+  volume: 0.3
   currentHealth: 0
   diesOnContact: 0
 --- !u!114 &1639835521776938760
