@@ -1,111 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-[System.Serializable]
-public class EnemyTierData
-{
-    public GameObject prefab;
-    public int tierLevel = 1; // 1 = weak, 2 = mid, 3 = strong
-    public float baseWeight = 1f;
-}
+using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Spawn Timing")]
-    public float spawnRateMin = 0.5f;
-    public float spawnRateMax = 3f;
-    public int maxConcurrentEnemies = 10;
+    [Header("Spawner Settings")]
+    public GameObject enemyPrefab;
+    public float spawnRateMin = 0.5f;  // spawn units per second (start)
+    public float spawnRateMax = 2f;    // spawn units per second (max over time)
+    public float timeToMaxRate = 60f;  // time in seconds to reach max spawn rate
 
-    [Header("Spawn Area")]
-    public Vector2 ySpawnRange = new Vector2(-3f, 3f);
-    [Header("Enemy Tiers")]
-    public List<EnemyTierData> enemyTiers = new();
-
-    private GameManager gameManager;
-    private float missionDuration;
+    private bool spawning = false;
     private float elapsedTime = 0f;
-    private float intensity = 1f;
-    private bool isSpawning = false;
-    private List<GameObject> spawnedEnemies = new();
 
     void Start()
     {
-        gameManager = FindFirstObjectByType<GameManager>();
-        if (gameManager != null)
+        StartCoroutine(SpawnRoutine());
+    }
+
+    IEnumerator SpawnRoutine()
+    {
+        while (spawning)
         {
-            intensity = gameManager.GetMissionIntensity();
-            missionDuration = Random.Range(gameManager.missionDurationMin, gameManager.missionDurationMax);
+            // Calculate current spawn rate based on elapsed time
+            float t = Mathf.Clamp01(elapsedTime / timeToMaxRate);
+            float currentRate = Mathf.Lerp(spawnRateMin, spawnRateMax, t);
+
+            // Spawn enemy
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+            // Wait for next spawn based on rate (units/second => delay = 1 / rate)
+            float delay = 1f / currentRate;
+            yield return new WaitForSeconds(delay);
+
+            elapsedTime += delay;
         }
     }
 
-    public void ActivateSpawner()
+    // Public function to stop spawning
+    public void StartSpawning()
     {
-        if (!isSpawning)
-        {
-            isSpawning = true;
-            StartCoroutine(SpawnerRoutine());
-        }
+        spawning = true;
     }
 
-    public void DeactivateSpawner()
+    public void StopSpawning()
     {
-        isSpawning = false;
-    }
-
-    IEnumerator SpawnerRoutine()
-    {
-        while (isSpawning)
-        {
-            elapsedTime += Time.deltaTime;
-            if (spawnedEnemies.RemoveAll(e => e == null) >= 0 && spawnedEnemies.Count >= maxConcurrentEnemies)
-            {
-                yield return new WaitForSeconds(0.2f);
-                continue;
-            }
-
-            float t = Mathf.Clamp01(elapsedTime / missionDuration);
-            float baseRate = Mathf.Lerp(spawnRateMax, spawnRateMin, Mathf.Sin(t * Mathf.PI));
-            float randomModifier = Random.Range(0.85f, 1.15f);
-            float spawnDelay = baseRate * randomModifier;
-
-            GameObject enemyToSpawn = PickEnemyBasedOnTier(t);
-            if (enemyToSpawn != null)
-            {
-                float y = Random.Range(ySpawnRange.x, ySpawnRange.y);
-                Vector3 spawnPos = new Vector3(transform.position.x, y, 0f);
-                GameObject enemy = Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, transform);
-                spawnedEnemies.Add(enemy);
-            }
-
-            yield return new WaitForSeconds(spawnDelay);
-        }
-    }
-
-    GameObject PickEnemyBasedOnTier(float progress)
-    {
-        float totalWeight = 0f;
-        List<float> tierWeights = new();
-
-        foreach (var tier in enemyTiers)
-        {
-            float scaledWeight = tier.baseWeight * intensity * (1 + tier.tierLevel * progress);
-            tierWeights.Add(scaledWeight);
-            totalWeight += scaledWeight;
-        }
-
-        float rand = Random.Range(0f, totalWeight);
-        float cumulative = 0f;
-
-        for (int i = 0; i < enemyTiers.Count; i++)
-        {
-            cumulative += tierWeights[i];
-            if (rand <= cumulative)
-            {
-                return enemyTiers[i].prefab;
-            }
-        }
-
-        return null;
+        spawning = false;
     }
 }

@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
             {
                 foreach (var s in spawners)
                 {
-                    s.GetComponent<Spawner>()?.ActivateSpawner();
+                    s.GetComponent<Spawner>()?.StartSpawning();
                 }
                 spawnersActive = true;
             }
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
             {
                 foreach (var s in spawners)
                 {
-                    s.GetComponent<Spawner>()?.DeactivateSpawner();
+                    s.GetComponent<Spawner>()?.StopSpawning();
                 }
                 spawnersActive = false;
             }

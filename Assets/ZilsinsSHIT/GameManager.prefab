@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4979313282631262938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6420496741091469374}
+  - component: {fileID: 6582152177553977611}
+  - component: {fileID: 2902392754287730043}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6420496741091469374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979313282631262938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6582152177553977611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979313282631262938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2d4520503535545b2e18fd96a7a028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+  - sprite: {fileID: 21300000, guid: 109977f44b4485a40af8edb9b7b88284, type: 3}
+    scrollSpeed: 4
+    yOffset: 5
+    sOrder: -5
+    activeInstances: []
+    spriteWidth: 0
+  - sprite: {fileID: 21300000, guid: 66ae20659c090c94dbb53ff72749f70a, type: 3}
+    scrollSpeed: 2
+    yOffset: 5
+    sOrder: -10
+    activeInstances: []
+    spriteWidth: 0
+  - sprite: {fileID: 21300000, guid: fbe7d3465a6dc004996f309b58ea02eb, type: 3}
+    scrollSpeed: 1
+    yOffset: 5
+    sOrder: -15
+    activeInstances: []
+    spriteWidth: 0
+  cameraTransform: {fileID: 0}
+  smoothStartStopSpeed: 0.5
+--- !u!114 &2902392754287730043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979313282631262938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee05c5dca2c9cef49befdf3e22aae47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionDurationMin: 180
+  missionDurationMax: 240
+  missionsCompleted: 0
+  missionTypeModifierPercent: 0.3
+  startParallaxTime: 5
+  spawnerStartTime: 10
+  spawnerStopBuffer: 15
+  stopParallaxBuffer: 5
+  sunTransform: {fileID: 0}
+  sunStartRotation: 60
+  sunEndRotation: -60
+  screenFilter: {fileID: 0}
+  sunriseColor: {r: 1, g: 0.6, b: 0.2, a: 0.22745098}
+  noonColor: {r: 1, g: 1, b: 1, a: 0}
+  sunsetColor: {r: 0.2, g: 0.3, b: 0.6, a: 0.5}
+  parallaxScript: {fileID: 6582152177553977611}
+  spawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  missionEndCanvas: {fileID: 0}

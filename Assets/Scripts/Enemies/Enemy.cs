@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Enemy Health: {currentHealth}");
         SoundFXManager.Instance.PlaySoundFXClip(deathSound, transform, volume);
         currentHealth -= amount;
-        if (currentHealth <= 0) Destroy(GameObject);
+        if (currentHealth <= 0) Destroy(gameObject);
         
 
     }
