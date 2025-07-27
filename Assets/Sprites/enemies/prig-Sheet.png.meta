@@ -106,7 +106,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,7 +120,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,7 +142,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -185,12 +185,12 @@ TextureImporter:
       name: prig-Sheet_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 111
-        width: 60
-        height: 40
+        x: 0
+        y: 112
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -207,12 +207,12 @@ TextureImporter:
       name: prig-Sheet_1
       rect:
         serializedVersion: 2
-        x: 107
-        y: 111
-        width: 62
-        height: 36
+        x: 92
+        y: 112
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -229,12 +229,12 @@ TextureImporter:
       name: prig-Sheet_2
       rect:
         serializedVersion: 2
-        x: 199
-        y: 111
-        width: 66
-        height: 36
+        x: 184
+        y: 112
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,12 +251,12 @@ TextureImporter:
       name: prig-Sheet_3
       rect:
         serializedVersion: 2
-        x: 291
-        y: 111
-        width: 66
-        height: 36
+        x: 276
+        y: 112
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: prig-Sheet_4
       rect:
         serializedVersion: 2
-        x: 299
-        y: 95
-        width: 12
-        height: 16
+        x: 368
+        y: 112
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -295,12 +295,12 @@ TextureImporter:
       name: prig-Sheet_5
       rect:
         serializedVersion: 2
-        x: 351
-        y: 95
-        width: 18
-        height: 18
+        x: 0
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -317,12 +317,12 @@ TextureImporter:
       name: prig-Sheet_6
       rect:
         serializedVersion: 2
-        x: 383
-        y: 111
-        width: 62
-        height: 36
+        x: 92
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -339,12 +339,12 @@ TextureImporter:
       name: prig-Sheet_7
       rect:
         serializedVersion: 2
-        x: 15
-        y: 55
-        width: 60
-        height: 40
+        x: 184
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: prig-Sheet_8
       rect:
         serializedVersion: 2
-        x: 103
-        y: 55
-        width: 64
-        height: 44
+        x: 276
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -383,12 +383,12 @@ TextureImporter:
       name: prig-Sheet_9
       rect:
         serializedVersion: 2
-        x: 153
-        y: 81
-        width: 18
-        height: 18
+        x: 368
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,12 +405,12 @@ TextureImporter:
       name: prig-Sheet_10
       rect:
         serializedVersion: 2
-        x: 199
-        y: 55
-        width: 60
-        height: 48
+        x: 460
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -427,12 +427,12 @@ TextureImporter:
       name: prig-Sheet_11
       rect:
         serializedVersion: 2
-        x: 251
-        y: 87
-        width: 18
-        height: 18
+        x: 552
+        y: 56
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,12 +449,12 @@ TextureImporter:
       name: prig-Sheet_12
       rect:
         serializedVersion: 2
-        x: 291
-        y: 55
-        width: 60
-        height: 32
+        x: 0
+        y: 0
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -471,12 +471,12 @@ TextureImporter:
       name: prig-Sheet_13
       rect:
         serializedVersion: 2
-        x: 315
-        y: 85
-        width: 14
-        height: 12
+        x: 92
+        y: 0
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -493,12 +493,12 @@ TextureImporter:
       name: prig-Sheet_14
       rect:
         serializedVersion: 2
-        x: 191
-        y: 69
-        width: 16
-        height: 14
+        x: 184
+        y: 0
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -515,12 +515,12 @@ TextureImporter:
       name: prig-Sheet_15
       rect:
         serializedVersion: 2
-        x: 275
-        y: 71
-        width: 16
-        height: 14
+        x: 276
+        y: 0
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -537,12 +537,12 @@ TextureImporter:
       name: prig-Sheet_16
       rect:
         serializedVersion: 2
-        x: 383
-        y: 55
-        width: 60
-        height: 24
+        x: 368
+        y: 0
+        width: 92
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -555,165 +555,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 475
-        y: 55
-        width: 60
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 93df3e24a4ba459a0800000000000000
-      internalID: -6245178447817867975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 567
-        y: 55
-        width: 60
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e45e41283195d7800800000000000000
-      internalID: 611743064713913678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 0
-        width: 60
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da6c5bbf1080b4f60800000000000000
-      internalID: 8019512366074283693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_20
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 0
-        width: 60
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6277c6c3757873650800000000000000
-      internalID: 6212583019726534438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 0
-        width: 60
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dff5bf817b8d7bf30800000000000000
-      internalID: 4591376626037252093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_22
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 0
-        width: 60
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5e7b42faa0e86ba0800000000000000
-      internalID: -6095375070831870374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prig-Sheet_23
-      rect:
-        serializedVersion: 2
-        x: 381
-        y: 0
-        width: 70
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 865bcc8999072ff30800000000000000
-      internalID: 4607869173749298536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 645898674c5c900448add41e4103bb99
     internalID: 0
     vertices: []
     indices: 
@@ -721,7 +567,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":3.0},"gridSpriteSize":{"x":92.0,"y":56.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       prig-Sheet_0: -6283758695689438697
       prig-Sheet_1: -9080788127996105395
@@ -732,14 +580,7 @@ TextureImporter:
       prig-Sheet_14: -3691585981896852860
       prig-Sheet_15: 8604431096805242864
       prig-Sheet_16: -2008811059301210222
-      prig-Sheet_17: -6245178447817867975
-      prig-Sheet_18: 611743064713913678
-      prig-Sheet_19: 8019512366074283693
       prig-Sheet_2: -4372636131066292476
-      prig-Sheet_20: 6212583019726534438
-      prig-Sheet_21: 4591376626037252093
-      prig-Sheet_22: -6095375070831870374
-      prig-Sheet_23: 4607869173749298536
       prig-Sheet_3: 6204513900340635620
       prig-Sheet_4: -4846558855437517729
       prig-Sheet_5: -770406967389928836

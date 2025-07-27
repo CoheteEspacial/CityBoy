@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,7 +102,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,7 +124,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -167,10 +167,10 @@ TextureImporter:
       name: Skok-Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 115
-        width: 110
-        height: 50
+        x: 0
+        y: 116
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Skok-Sheet_1
       rect:
         serializedVersion: 2
-        x: 117
-        y: 115
-        width: 110
-        height: 50
+        x: 116
+        y: 116
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,9 +211,9 @@ TextureImporter:
       name: Skok-Sheet_2
       rect:
         serializedVersion: 2
-        x: 117
-        y: 57
-        width: 112
+        x: 232
+        y: 116
+        width: 116
         height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: Skok-Sheet_3
       rect:
         serializedVersion: 2
-        x: 231
-        y: 57
+        x: 348
+        y: 116
         width: 116
-        height: 108
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +255,10 @@ TextureImporter:
       name: Skok-Sheet_4
       rect:
         serializedVersion: 2
-        x: 349
-        y: 57
+        x: 464
+        y: 116
         width: 116
-        height: 108
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: Skok-Sheet_5
       rect:
         serializedVersion: 2
-        x: 465
-        y: 57
+        x: 580
+        y: 116
         width: 116
-        height: 108
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +299,10 @@ TextureImporter:
       name: Skok-Sheet_6
       rect:
         serializedVersion: 2
-        x: 581
-        y: 115
-        width: 110
-        height: 50
+        x: 696
+        y: 116
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: Skok-Sheet_7
       rect:
         serializedVersion: 2
-        x: 697
-        y: 115
-        width: 110
-        height: 50
+        x: 812
+        y: 116
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +343,10 @@ TextureImporter:
       name: Skok-Sheet_8
       rect:
         serializedVersion: 2
-        x: 813
-        y: 115
-        width: 110
-        height: 50
+        x: 0
+        y: 58
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: Skok-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1
-        y: 57
-        width: 110
-        height: 50
+        x: 116
+        y: 58
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,10 +387,10 @@ TextureImporter:
       name: Skok-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 110
-        height: 49
+        x: 232
+        y: 58
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +409,10 @@ TextureImporter:
       name: Skok-Sheet_11
       rect:
         serializedVersion: 2
-        x: 121
-        y: 0
-        width: 110
-        height: 47
+        x: 348
+        y: 58
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,10 +431,10 @@ TextureImporter:
       name: Skok-Sheet_12
       rect:
         serializedVersion: 2
-        x: 235
-        y: 0
-        width: 112
-        height: 45
+        x: 464
+        y: 58
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,10 +453,10 @@ TextureImporter:
       name: Skok-Sheet_13
       rect:
         serializedVersion: 2
-        x: 349
+        x: 0
         y: 0
-        width: 114
-        height: 41
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +475,10 @@ TextureImporter:
       name: Skok-Sheet_14
       rect:
         serializedVersion: 2
-        x: 465
+        x: 116
         y: 0
-        width: 114
-        height: 39
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,10 +497,10 @@ TextureImporter:
       name: Skok-Sheet_15
       rect:
         serializedVersion: 2
-        x: 581
+        x: 232
         y: 0
-        width: 114
-        height: 39
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,10 +519,10 @@ TextureImporter:
       name: Skok-Sheet_16
       rect:
         serializedVersion: 2
-        x: 697
+        x: 348
         y: 0
-        width: 114
-        height: 39
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +541,10 @@ TextureImporter:
       name: Skok-Sheet_17
       rect:
         serializedVersion: 2
-        x: 813
+        x: 464
         y: 0
-        width: 114
-        height: 39
+        width: 116
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,11 +559,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 0
+        width: 116
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7743caf1712ca41b0ae00b94170973
+      internalID: 847279673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 0
+        width: 116
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e43d33ddd220344db0751474c331951
+      internalID: 1890264394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skok-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 0
+        width: 116
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf5aeff49e30f64bb1df67b7d279bd2
+      internalID: -1407550820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: de986948312e9ba4cbcc75025743bf7f
     internalID: 0
     vertices: []
     indices: 
@@ -571,7 +637,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":3.0},"gridSpriteSize":{"x":116.0,"y":58.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Skok-Sheet_0: 4736177887275952741
       Skok-Sheet_1: 6672305908992827704
@@ -583,7 +651,10 @@ TextureImporter:
       Skok-Sheet_15: -2806006150832151095
       Skok-Sheet_16: -5310569267959100237
       Skok-Sheet_17: 3305954203475375545
+      Skok-Sheet_18: 847279673
+      Skok-Sheet_19: 1890264394
       Skok-Sheet_2: 3203173866766224322
+      Skok-Sheet_20: -1407550820
       Skok-Sheet_3: 2147548337201160486
       Skok-Sheet_4: -3838063913633630236
       Skok-Sheet_5: 8112010593972679481

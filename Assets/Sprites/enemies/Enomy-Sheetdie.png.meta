@@ -106,7 +106,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,7 +120,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,7 +142,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -185,10 +185,10 @@ TextureImporter:
       name: Enomy-Sheetdie_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 100
-        height: 119
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,10 +207,10 @@ TextureImporter:
       name: Enomy-Sheetdie_1
       rect:
         serializedVersion: 2
-        x: 139
+        x: 142
         y: 0
-        width: 96
-        height: 115
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: Enomy-Sheetdie_2
       rect:
         serializedVersion: 2
-        x: 273
-        y: 57
-        width: 8
-        height: 6
+        x: 284
+        y: 0
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,10 +251,10 @@ TextureImporter:
       name: Enomy-Sheetdie_3
       rect:
         serializedVersion: 2
-        x: 275
+        x: 426
         y: 0
-        width: 88
-        height: 109
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Enomy-Sheetdie_4
       rect:
         serializedVersion: 2
-        x: 407
+        x: 568
         y: 0
-        width: 104
-        height: 107
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: Enomy-Sheetdie_5
       rect:
         serializedVersion: 2
-        x: 523
+        x: 710
         y: 0
-        width: 116
-        height: 79
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +317,10 @@ TextureImporter:
       name: Enomy-Sheetdie_6
       rect:
         serializedVersion: 2
-        x: 545
-        y: 45
-        width: 24
-        height: 48
+        x: 852
+        y: 0
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,10 +339,10 @@ TextureImporter:
       name: Enomy-Sheetdie_7
       rect:
         serializedVersion: 2
-        x: 573
-        y: 59
-        width: 30
-        height: 42
+        x: 994
+        y: 0
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +361,10 @@ TextureImporter:
       name: Enomy-Sheetdie_8
       rect:
         serializedVersion: 2
-        x: 659
+        x: 1136
         y: 0
-        width: 112
-        height: 101
+        width: 142
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,341 +379,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_9
-      rect:
-        serializedVersion: 2
-        x: 773
-        y: 31
-        width: 32
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 435663e59619a94d0800000000000000
-      internalID: -3127027109517171404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_10
-      rect:
-        serializedVersion: 2
-        x: 821
-        y: 45
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ba97f05601cda690800000000000000
-      internalID: -7589197564177048905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_11
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 35
-        width: 36
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06789d876e47aca40800000000000000
-      internalID: 5389248437321041760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_12
-      rect:
-        serializedVersion: 2
-        x: 883
-        y: 29
-        width: 14
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ce34c543822e3800800000000000000
-      internalID: 593950148066033346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_13
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 19
-        width: 18
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66d522e4358b76010800000000000000
-      internalID: 1182116095140715878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_14
-      rect:
-        serializedVersion: 2
-        x: 403
-        y: 47
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3a7f28c0fdffd590800000000000000
-      internalID: -7647114431659279810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_15
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 35
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 19b145b29ca35d6c0800000000000000
-      internalID: -4119321648470680687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_16
-      rect:
-        serializedVersion: 2
-        x: 797
-        y: 0
-        width: 66
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f62257275d5b87960800000000000000
-      internalID: 7600024299540652655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_17
-      rect:
-        serializedVersion: 2
-        x: 957
-        y: 13
-        width: 58
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f651d5316f3d778a0800000000000000
-      internalID: -6307339699268807313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_18
-      rect:
-        serializedVersion: 2
-        x: 767
-        y: 35
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 80ab43cc491e500e0800000000000000
-      internalID: -2304187605132723704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_19
-      rect:
-        serializedVersion: 2
-        x: 395
-        y: 0
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1bb581eca2ea96490800000000000000
-      internalID: -7752473784672035919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_20
-      rect:
-        serializedVersion: 2
-        x: 651
-        y: 0
-        width: 18
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7828ec4d7270ca360800000000000000
-      internalID: 7182123373404521095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_21
-      rect:
-        serializedVersion: 2
-        x: 779
-        y: 0
-        width: 18
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbf370865bc4ae080800000000000000
-      internalID: -9157422550286385221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_22
-      rect:
-        serializedVersion: 2
-        x: 895
-        y: 0
-        width: 385
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06f61fbe4648be030800000000000000
-      internalID: 3525056702337609568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enomy-Sheetdie_23
-      rect:
-        serializedVersion: 2
-        x: 1123
-        y: 25
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a0afdd5e0726f140800000000000000
-      internalID: 4753029399394099362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c3cd1572577349b449b2fc3695cd41d4
     internalID: 0
     vertices: []
     indices: 
@@ -721,32 +391,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":142.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Enomy-Sheetdie_0: -3177808888630897601
       Enomy-Sheetdie_1: 7044251674070305523
-      Enomy-Sheetdie_10: -7589197564177048905
-      Enomy-Sheetdie_11: 5389248437321041760
-      Enomy-Sheetdie_12: 593950148066033346
-      Enomy-Sheetdie_13: 1182116095140715878
-      Enomy-Sheetdie_14: -7647114431659279810
-      Enomy-Sheetdie_15: -4119321648470680687
-      Enomy-Sheetdie_16: 7600024299540652655
-      Enomy-Sheetdie_17: -6307339699268807313
-      Enomy-Sheetdie_18: -2304187605132723704
-      Enomy-Sheetdie_19: -7752473784672035919
       Enomy-Sheetdie_2: -6319716385053792305
-      Enomy-Sheetdie_20: 7182123373404521095
-      Enomy-Sheetdie_21: -9157422550286385221
-      Enomy-Sheetdie_22: 3525056702337609568
-      Enomy-Sheetdie_23: 4753029399394099362
       Enomy-Sheetdie_3: 6077254813189888497
       Enomy-Sheetdie_4: -4366882082477491545
       Enomy-Sheetdie_5: -1751532893991624957
       Enomy-Sheetdie_6: 4450878663245912821
       Enomy-Sheetdie_7: -8551155270982100003
       Enomy-Sheetdie_8: 5662869585476666120
-      Enomy-Sheetdie_9: -3127027109517171404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

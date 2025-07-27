@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     public EnemyData data;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private float volume = 1f;
+    [SerializeField] private Animator animator;
 
     [HideInInspector] public float currentHealth;
     private Transform player;
@@ -26,7 +27,11 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Enemy Health: {currentHealth}");
         SoundFXManager.Instance.PlaySoundFXClip(deathSound, transform, volume);
         currentHealth -= amount;
-        if (currentHealth <= 0) Destroy(gameObject);
+        if (currentHealth <= 0)
+        {
+            DieAnim();
+        }
+
     }
 
     public bool IsInRange(float distance)
@@ -39,5 +44,14 @@ public class Enemy : MonoBehaviour
     {
         if (player == null) return 0;
         return Mathf.Sign(player.position.x - transform.position.x);
+    }
+    public void DieAnim()
+    {
+        animator.SetBool("Dead", true);
+    }
+    public void Die()
+    {
+
+        Destroy(gameObject);
     }
 }

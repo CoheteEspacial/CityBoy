@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5751391137786320299}
   - component: {fileID: 1901291600676921490}
   - component: {fileID: 7998535205807077666}
+  - component: {fileID: 2451681312534303743}
   m_Layer: 10
   m_Name: CommonSuicider
   m_TagString: Enemy
@@ -81,8 +82,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.8773585, g: 0.638966, b: 0.32694018, a: 1}
+  m_Sprite: {fileID: -6283758695689438697, guid: 788792ee0953afd42b0e0103f36c1729, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,6 +108,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 601324cb2424de9478af80c19da3d84b, type: 2}
   deathSound: {fileID: 8300000, guid: 36d3bbc7c381d6045b7f968605a2c788, type: 3}
   volume: 0.3
+  animator: {fileID: 2451681312534303743}
   currentHealth: 0
   diesOnContact: 1
 --- !u!50 &6123015431632967144
@@ -164,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 8dd16a8e35f817e4bb917dd1d65322cb, type: 3}
   volume: 1
+  animator: {fileID: 2451681312534303743}
   dashTriggerDistance: 6
   dashForce: 10
   dashCooldown: 2
@@ -204,5 +207,27 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_Radius: 0.5
+  m_Offset: {x: 0.0014925003, y: -0.3586926}
+  m_Radius: 0.632102
+--- !u!95 &2451681312534303743
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729576263802905828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75a11738b924c264cb2dfd439158d04d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
