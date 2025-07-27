@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &961731653
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1191,6 +1191,26 @@ PrefabInstance:
     - target: {fileID: 44042597217802562, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 590974039803988707, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
+      propertyPath: deck.Array.data[0].damageBuffPercent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590974039803988707, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
+      propertyPath: deck.Array.data[1].damageBuffPercent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590974039803988707, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
+      propertyPath: deck.Array.data[2].damageBuffPercent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 590974039803988707, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
+      propertyPath: deck.Array.data[1].fireRateBuffPercent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590974039803988707, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
+      propertyPath: deck.Array.data[2].fireRateBuffPercent
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4607858323431767820, guid: 83fed456e52e8b54e8c0b41b12aa2849, type: 3}
       propertyPath: m_AnchorMax.y
