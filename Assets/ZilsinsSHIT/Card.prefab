@@ -443,6 +443,8 @@ MonoBehaviour:
   currentPosition: 0
   targetPosition: {x: 0, y: 0, z: 0}
   isDragging: 0
+  castSound: {fileID: 8300000, guid: 4aa0cb72cc1a34b42a8939d1d6e93614, type: 3}
+  volume: 1
 --- !u!61 &3356713403793202800
 BoxCollider2D:
   m_ObjectHideFlags: 0
