@@ -56,7 +56,7 @@ public class TurretScript : MonoBehaviour
     [SerializeField] private float returnRotationSpeed = 2f;
 
     [Header("Turret Type")]
-    [SerializeField] private TurretType selectedType;
+    public TurretType selectedType;
 
     // Base values for resetting buffs
     private float baseTargetingRange;
