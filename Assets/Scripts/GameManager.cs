@@ -132,7 +132,8 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Mission Complete! Moving to next phase.");
         //StartNextPhase();
-        FindFirstObjectByType<MissionEndUI>().Show(Player.Instance.turretTypes);
+        FindFirstObjectByType<MissionEndUI>().gameObject.SetActive(true);
+
     }
 
     public void StartNextPhase()
