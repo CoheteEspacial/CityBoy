@@ -23,6 +23,10 @@ public class TurretScript : MonoBehaviour
     [SerializeField] private GameObject upgradedFlame; // For Turret D range buff
     [SerializeField] private Transform firingPort;
     [SerializeField] private LineRenderer rayLine;
+    public GameObject gunA;
+    public GameObject gunB;
+    public GameObject gunC;
+    public GameObject gunD;
 
     [Header("Audio")]
     [SerializeField] private AudioClip lasSound;
@@ -110,6 +114,33 @@ public class TurretScript : MonoBehaviour
     {
         // Handle buff expiration
         HandleBuffExpiration();
+        switch (selectedType)
+        {
+            case TurretType.TurretA:
+                gunA.SetActive(true);
+                gunB.SetActive(false);
+                gunC.SetActive(false);
+                gunD.SetActive(false);
+                break;
+            case TurretType.TurretB:
+                gunA.SetActive(false);
+                gunB.SetActive(true);
+                gunC.SetActive(false);
+                gunD.SetActive(false);
+                break;
+            case TurretType.TurretC:
+                gunA.SetActive(false);
+                gunB.SetActive(false);
+                gunC.SetActive(true);
+                gunD.SetActive(false);
+                break;
+            case TurretType.TurretD:
+                gunA.SetActive(false);
+                gunB.SetActive(false);
+                gunC.SetActive(false);
+                gunD.SetActive(true);
+                break;
+        }
     }
 
     private void FixedUpdate()
