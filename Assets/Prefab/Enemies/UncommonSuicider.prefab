@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.6037736, g: 0.45852616, b: 0.45852616, a: 1}
+  m_Sprite: {fileID: 4736177887275952741, guid: 7c87e92c6dd95f04ba5a4016934c3b2d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: cf44b1ecd910ac24e9df41340c35595a, type: 2}
   deathSound: {fileID: 8300000, guid: 36d3bbc7c381d6045b7f968605a2c788, type: 3}
   volume: 0.3
+  animator: {fileID: 0}
   currentHealth: 0
   diesOnContact: 0
 --- !u!50 &7351534122031696321
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 8dd16a8e35f817e4bb917dd1d65322cb, type: 3}
   volume: 1
+  animator: {fileID: 0}
   dashTriggerDistance: 6
   dashForce: 15
   dashCooldown: 2

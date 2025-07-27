@@ -10,7 +10,7 @@ public class DashAtPlayer : MonoBehaviour
     private bool isReturning = false;
     [SerializeField] private AudioClip hitSound;
     [SerializeField] private float volume = 1f;
-    [SerializeField] private Animator animator;
+    
 
     [Header("Dash Settings")]
     public float dashTriggerDistance = 2f;
@@ -85,7 +85,7 @@ public class DashAtPlayer : MonoBehaviour
     {
         rb.gravityScale = returnGravityScale;
         SoundFXManager.Instance.PlaySoundFXClip(hitSound, transform, volume);
-        animator.SetBool("Attack", true);
+        
 
 
         // Wait until we reach or fall below the original Y

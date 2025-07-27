@@ -233,7 +233,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -594722855333316939, guid: 97aa0b1233467164ca6305bd6b26f128, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 601324cb2424de9478af80c19da3d84b, type: 2}
   deathSound: {fileID: 8300000, guid: 36d3bbc7c381d6045b7f968605a2c788, type: 3}
   volume: 0.3
+  animator: {fileID: 0}
   currentHealth: 0
   diesOnContact: 0
 --- !u!114 &1639835521776938760
@@ -355,5 +356,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.16252446}
+  m_Radius: 1.2313607

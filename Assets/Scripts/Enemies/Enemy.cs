@@ -5,8 +5,7 @@ public class Enemy : MonoBehaviour
     public EnemyData data;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private float volume = 1f;
-    [SerializeField] private Animator animator;
-    private bool deathanim = true;
+    
 
     [HideInInspector] public float currentHealth;
     private Transform player;
@@ -28,10 +27,8 @@ public class Enemy : MonoBehaviour
         Debug.Log($"Enemy Health: {currentHealth}");
         SoundFXManager.Instance.PlaySoundFXClip(deathSound, transform, volume);
         currentHealth -= amount;
-        if (currentHealth <= 0 && deathanim)
-        {
-            DieAnim();
-        }
+        if (currentHealth <= 0) Destroy(GameObject);
+        
 
     }
 
@@ -46,14 +43,5 @@ public class Enemy : MonoBehaviour
         if (player == null) return 0;
         return Mathf.Sign(player.position.x - transform.position.x);
     }
-    public void DieAnim()
-    {
-        animator.SetBool("Dead", true);
-        deathanim = false;
-    }
-    public void Die()
-    {
-
-        Destroy(gameObject);
-    }
+   
 }
