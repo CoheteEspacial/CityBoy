@@ -40,6 +40,19 @@ public class GameManager : MonoBehaviour
     private float intensity;
     private bool spawnersActive = false;
 
+
+
+
+    public static GameManager Instance;
+
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
+
     void Start()
     {
         StartCoroutine(MissionRoutine());
@@ -118,13 +131,18 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Mission Complete! Moving to next phase.");
-        StartNextPhase();
+        //StartNextPhase();
+        FindFirstObjectByType<MissionEndUI>().Show(Player.Instance.turretTypes);
     }
 
-    private void StartNextPhase()
+    public void StartNextPhase()
     {
-        // TODO: Handle planning/map phase
+        Player.Instance.SaveState();
+        // Later you’ll replace this with the real phase loader
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
+
 
     public float GetMissionIntensity()
     {
