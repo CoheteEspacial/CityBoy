@@ -12,13 +12,29 @@ public class Player : MonoBehaviour
     [Header("Turret Setup")]
     public List<TurretType> turretTypes = new();  // This stores selected turret types
 
+
+
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Prevent duplicates
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject); //  Keep data between scenes
+
+        currentHealth = maxHealth;
+
+        /*
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
         currentHealth = maxHealth;
         LoadState(); // Load turrets/health on start
+
+        */
     }
 
     public void TakeDamage(float amount)
@@ -40,6 +56,7 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /*
     public void SaveState()
     {
         PlayerPrefs.SetFloat("Health", currentHealth);
@@ -65,4 +82,5 @@ public class Player : MonoBehaviour
 
         Debug.Log($"Loaded {turretTypes.Count} turrets and {currentHealth} health.");
     }
+    */
 }

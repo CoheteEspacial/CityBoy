@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private float intensity;
     private bool spawnersActive = false;
 
-
+    public GameObject missionEndCanvas; // Reference to the MissionEndUI canvas
 
 
     public static GameManager Instance;
@@ -132,13 +132,13 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Mission Complete! Moving to next phase.");
         //StartNextPhase();
-        FindFirstObjectByType<MissionEndUI>().gameObject.SetActive(true);
+        missionEndCanvas.SetActive(true); // Show mission end UI
 
     }
 
     public void StartNextPhase()
     {
-        Player.Instance.SaveState();
+        //Player.Instance.SaveState();
         // Later you’ll replace this with the real phase loader
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);

@@ -97,6 +97,7 @@ public class TurretScript : MonoBehaviour
 
     [Header("UI")]
     public TMP_Dropdown typeDropdown;
+    public int turretSlotIndex = 0; // Index in Player's turretTypes list
 
     private void Start()
     {
@@ -560,7 +561,7 @@ public class TurretScript : MonoBehaviour
         if (Player.Instance != null)
         {
             Player.Instance.turretTypes[turretSlotIndex] = selectedType;
-            // ? No need to save to PlayerPrefs
+            // No need to save to PlayerPrefs
         }
     }
 

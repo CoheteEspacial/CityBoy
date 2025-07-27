@@ -12,7 +12,7 @@ public class MissionEndUI : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         nextButton.onClick.AddListener(ApplyChangesAndContinue);
     }
 
@@ -24,7 +24,7 @@ public class MissionEndUI : MonoBehaviour
         foreach (var dd in dropdowns)
             Player.Instance.turretTypes.Add((TurretType)dd.value);
 
-        Player.Instance.SaveState();
+        //Player.Instance.SaveState();
         GameManager.Instance.StartNextPhase(); // Reloads scene for now
     }
 }

@@ -19,8 +19,6 @@ public class Spawner : MonoBehaviour
 
     [Header("Spawn Area")]
     public Vector2 ySpawnRange = new Vector2(-3f, 3f);
-    public Transform spawnParent;
-
     [Header("Enemy Tiers")]
     public List<EnemyTierData> enemyTiers = new();
 
