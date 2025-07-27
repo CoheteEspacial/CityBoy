@@ -209,6 +209,10 @@ MonoBehaviour:
   upgradedFlame: {fileID: 6875215592996913953, guid: 20c0c1bf1d77beb43899bda8217334d8, type: 3}
   firingPort: {fileID: 5188554609235327130}
   rayLine: {fileID: 698579575102121675}
+  lasSound: {fileID: 8300000, guid: ae2b3e3ee777e9942b8d5d8ecda47a87, type: 3}
+  gunSound: {fileID: 8300000, guid: 326814f60408b34439187c78c770a41f, type: 3}
+  machinegunSound: {fileID: 8300000, guid: f50207a2050496845b7f37c93cf41c83, type: 3}
+  volume: 1
   targetingRange: 15
   rotationSpeed: 100
   AChargeTime: 1.5
@@ -226,7 +230,7 @@ MonoBehaviour:
   fireCooldown: 3
   fieldOfViewAngle: 90
   returnRotationSpeed: 50
-  selectedType: 3
+  selectedType: 2
 --- !u!120 &698579575102121675
 LineRenderer:
   serializedVersion: 2

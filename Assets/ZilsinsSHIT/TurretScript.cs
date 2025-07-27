@@ -24,6 +24,12 @@ public class TurretScript : MonoBehaviour
     [SerializeField] private Transform firingPort;
     [SerializeField] private LineRenderer rayLine;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip lasSound;
+    [SerializeField] private AudioClip gunSound;
+    [SerializeField] private AudioClip machinegunSound;
+    [SerializeField] private float volume = 1f;
+
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 5f;
     [SerializeField] private float rotationSpeed = 5f;
@@ -169,6 +175,7 @@ public class TurretScript : MonoBehaviour
             chargeTimer -= Time.deltaTime;
             if (chargeTimer <= 0)
             {
+                SoundFXManager.Instance.PlaySoundFXClip(lasSound, transform, volume);
                 FireRay();
                 isCharging = false;
             }
@@ -185,6 +192,7 @@ public class TurretScript : MonoBehaviour
         fireTimer -= Time.deltaTime;
         if (fireTimer <= 0)
         {
+            SoundFXManager.Instance.PlaySoundFXClip(gunSound, transform, volume);
             Shoot();
             fireTimer = 1f / BFireRate;
         }
@@ -205,6 +213,7 @@ public class TurretScript : MonoBehaviour
             fireTimer -= Time.deltaTime;
             if (fireTimer <= 0)
             {
+                SoundFXManager.Instance.PlaySoundFXClip(machinegunSound, transform, volume);
                 FireSpread();
                 fireTimer = 1f / fireRate;
             }
