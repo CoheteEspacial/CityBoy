@@ -42,21 +42,23 @@ public class DashAtPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (enemy.diesOnContact)
-        {
-            enemy.TakeDamage(enemy.currentHealth); // Kill the enemy on contact
-        }
-        else
-        {
-            enemy.TakeDamage(1);
-        }
+        
 
             
-        Debug.Log($"Enemy Health: {enemy.currentHealth}");
+        
         if (isReturning) return;
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (enemy.diesOnContact)
+            {
+                enemy.TakeDamage(enemy.currentHealth); // Kill the enemy on contact
+            }
+            else
+            {
+                enemy.TakeDamage(1);
+            }
+
             Vector2 playerPos = enemy.GetPlayer().position;
             float direction = Mathf.Sign(transform.position.x - playerPos.x);
 

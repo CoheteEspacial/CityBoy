@@ -6,6 +6,12 @@ public class Projectile : MonoBehaviour
     private float damage;
     private Vector2 direction;
 
+    public TargetType targetType = TargetType.Enemy;
+    public enum TargetType
+    {
+        Enemy,
+        Player
+    }
     public void SetDamage(float dmg)
     {
         damage = dmg;

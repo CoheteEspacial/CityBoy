@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        Debug.Log($"Enemy Health: {currentHealth}");
         currentHealth -= amount;
         if (currentHealth <= 0) Destroy(gameObject);
     }
